@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Top-Up Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        h2 { color: #ffcc00; }
+        label { display: block; text-align: left; margin-top: 10px; font-size: 14px; }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ffcc00;
+            border: none;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #e6b800; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Gaming Top-Up Store</h2>
+        <form id="topupForm">
+            <label>ගේම් එක තෝරන්න:</label>
+            <select id="game">
+                <option value="freefire">Free Fire</option>
+                <option value="codm">Call of Duty: Mobile</option>
+            </select>
+
+            <label>Player ID එක ඇතුළත් කරන්න:</label>
+            <input type="text" id="playerId" placeholder="Player ID එක මෙතැනින් ලියන්න" required>
+
+            <label>දියමන්ති (Diamonds) පැකේජය:</label>
+            <select id="package">
+                <option value="100">100 Diamonds</option>
+                <option value="310">310 Diamonds</option>
+                <option value="520">520 Diamonds</option>
+            </select>
+
+            <button type="submit">Top-Up කරන්න</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('topupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const playerId = document.getElementById('playerId').value;
+            const game = document.getElementById('game').value;
+            alert(`සාර්ථකයි! Game: ${game} සහ Player ID: ${playerId} සඳහා ඉල්ලීම ලැබුණි.`);
+        });
+    </script>
+
+</body>
+</html>
